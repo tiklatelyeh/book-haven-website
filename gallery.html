@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Book Haven | Gallery</title>
+
   <style>
     :root {
       --accent: #2b6cb0;
@@ -14,9 +15,7 @@
       --container: 1100px;
     }
 
-    * {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; }
 
     html, body {
       height: 100%;
@@ -27,10 +26,7 @@
       -webkit-font-smoothing: antialiased;
     }
 
-    a {
-      color: var(--accent);
-      text-decoration: none;
-    }
+    a { color: var(--accent); text-decoration: none; }
 
     .wrap {
       max-width: var(--container);
@@ -44,11 +40,7 @@
       border-bottom: 1px solid #e6eef8;
     }
 
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-    }
+    .brand { display: flex; align-items: center; gap: 16px; }
 
     .logo {
       width: 56px;
@@ -62,9 +54,7 @@
       color: white;
     }
 
-    nav {
-      margin-left: auto;
-    }
+    nav { margin-left: auto; }
 
     .nav-list {
       display: flex;
@@ -83,25 +73,52 @@
       background: transparent;
     }
 
-    main {
-      padding: 24px 0;
-    }
+    main { padding: 24px 0; }
 
-    h1, h2 {
-      font-size: 2rem;
-    }
+    h2 { font-size: 2rem; margin-top: 0; }
 
-    .hero, .books {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 18px;
-    }
-
-    .card {
+    table {
+      width: 100%;
+      border-collapse: collapse;
       background: var(--card);
       border: 1px solid #e6eef8;
-      padding: 16px;
       border-radius: var(--radius);
+      overflow: hidden;
+    }
+
+    th, td {
+      border: 1px solid #e6eef8;
+      padding: 12px;
+      vertical-align: top;
+    }
+
+    th {
+      background: #edf4ff;
+      text-align: left;
+    }
+
+    img {
+      max-width: 180px;
+      height: auto;
+      display: block;
+      border-radius: 8px;
+    }
+
+    .btn {
+      background: var(--accent);
+      color: #fff;
+      padding: 10px 14px;
+      border-radius: 8px;
+      border: 0;
+      cursor: pointer;
+      font-weight: 600;
+    }
+
+    .actions {
+      display: flex;
+      gap: 10px;
+      margin: 16px 0 0;
+      flex-wrap: wrap;
     }
 
     footer {
@@ -119,41 +136,12 @@
       flex-wrap: wrap;
     }
 
-    footer a {
-      color: var(--muted);
-    }
-
-    .book img {
-      width: 100%;
-      height: 220px;
-      object-fit: cover;
-      border-radius: 8px;
-    }
-
-    .book p {
-      margin: 0;
-      color: var(--muted);
-      font-size: 0.9rem;
-    }
-
-    /* Adjustments for mobile screens */
     @media (max-width: 820px) {
-      .hero {
-        grid-template-columns: 1fr;
-      }
-
-      .brand {
-        gap: 10px;
-      }
-
-      nav {
-        order: 3;
-        width: 100%;
-      }
-
-      .nav-list {
-        justify-content: center;
-      }
+      .brand { gap: 10px; }
+      nav { order: 3; width: 100%; }
+      .nav-list { justify-content: center; }
+      img { max-width: 140px; }
+      th, td { padding: 10px; }
     }
   </style>
 </head>
@@ -186,7 +174,7 @@
     <h2>Gallery</h2>
     <p>Browse our featured items below and click “Add to Cart” to select an item.</p>
 
-    <table border="1" cellpadding="10" cellspacing="0">
+    <table>
       <thead>
         <tr>
           <th>Item</th>
@@ -200,77 +188,131 @@
         <!-- Books -->
         <tr>
           <td><strong>Book:</strong> Brie Mine 4Ever</td>
-          <td><img src="images/Client3_Book1.png" alt="Book cover: Brie Mine 4Ever" width="180" /></td>
+          <td><img src="images/Client3_Book1.png" alt="Book cover: Brie Mine 4Ever" /></td>
           <td>A featured romance title—perfect for cozy reading nights.</td>
-          <td><button type="button">Add to Cart</button></td>
+          <td><button type="button" class="btn add-to-cart">Add to Cart</button></td>
         </tr>
 
         <tr>
           <td><strong>Book:</strong> Glory Riders</td>
-          <td><img src="images/Client3_Book2.png" alt="Book cover: Glory Riders" width="180" /></td>
+          <td><img src="images/Client3_Book2.png" alt="Book cover: Glory Riders" /></td>
           <td>An action-packed read for adventure lovers.</td>
-          <td><button type="button">Add to Cart</button></td>
+          <td><button type="button" class="btn add-to-cart">Add to Cart</button></td>
         </tr>
 
         <tr>
           <td><strong>Book:</strong> Sorcerer’s Shadowed Chronicles</td>
-          <td><img src="images/Client3_Book3.png" alt="Book cover: Sorcerer’s Shadowed Chronicles" width="180" /></td>
+          <td><img src="images/Client3_Book3.png" alt="Book cover: Sorcerer’s Shadowed Chronicles" /></td>
           <td>A fantasy story with magic, mystery, and dark twists.</td>
-          <td><button type="button">Add to Cart</button></td>
+          <td><button type="button" class="btn add-to-cart">Add to Cart</button></td>
         </tr>
 
         <!-- Magazines -->
         <tr>
           <td><strong>Magazine:</strong> Ball</td>
-          <td><img src="images/Client3_Magazine1.png" alt="Magazine cover: Ball" width="220" /></td>
+          <td><img src="images/Client3_Magazine1.png" alt="Magazine cover: Ball" /></td>
           <td>Sports highlights, stories, and game-day inspiration.</td>
-          <td><button type="button">Add to Cart</button></td>
+          <td><button type="button" class="btn add-to-cart">Add to Cart</button></td>
         </tr>
 
         <tr>
           <td><strong>Magazine:</strong> Travel</td>
-          <td><img src="images/Client3_Magazine2.png" alt="Magazine cover: Travel" width="220" /></td>
+          <td><img src="images/Client3_Magazine2.png" alt="Magazine cover: Travel" /></td>
           <td>Destination guides and travel ideas for every season.</td>
-          <td><button type="button">Add to Cart</button></td>
+          <td><button type="button" class="btn add-to-cart">Add to Cart</button></td>
         </tr>
 
         <tr>
           <td><strong>Magazine:</strong> Eat</td>
-          <td><img src="images/Client3_Magazine3.png" alt="Magazine cover: Eat" width="220" /></td>
+          <td><img src="images/Client3_Magazine3.png" alt="Magazine cover: Eat" /></td>
           <td>Food features, recipes, and restaurant inspiration.</td>
-          <td><button type="button">Add to Cart</button></td>
+          <td><button type="button" class="btn add-to-cart">Add to Cart</button></td>
         </tr>
 
         <!-- Merch -->
         <tr>
           <td><strong>Merch:</strong> Read Tote Bag</td>
-          <td><img src="images/Client3_ToteBag.png" alt="Tote bag that says READ" width="220" /></td>
+          <td><img src="images/Client3_ToteBag.png" alt="Tote bag that says READ" /></td>
           <td>A sturdy tote bag for carrying books, journals, and more.</td>
-          <td><button type="button">Add to Cart</button></td>
+          <td><button type="button" class="btn add-to-cart">Add to Cart</button></td>
         </tr>
 
         <tr>
           <td><strong>Merch:</strong> Book Haven Notebook</td>
-          <td><img src="images/Client3_Notebook.png" alt="Book Haven Bookstore notebook" width="180" /></td>
+          <td><img src="images/Client3_Notebook.png" alt="Book Haven Bookstore notebook" /></td>
           <td>Great for notes, journaling, and book lists.</td>
-          <td><button type="button">Add to Cart</button></td>
+          <td><button type="button" class="btn add-to-cart">Add to Cart</button></td>
         </tr>
 
         <tr>
           <td><strong>Merch:</strong> Sticker Pack</td>
-          <td><img src="images/Client3_Stickers.png" alt="Sticker set with reading and bookstore designs" width="220" /></td>
+          <td><img src="images/Client3_Stickers.png" alt="Sticker set with reading and bookstore designs" /></td>
           <td>Fun stickers to decorate laptops, notebooks, and water bottles.</td>
-          <td><button type="button">Add to Cart</button></td>
+          <td><button type="button" class="btn add-to-cart">Add to Cart</button></td>
         </tr>
       </tbody>
     </table>
+
+    <!-- Required placeholder cart buttons -->
+    <div class="actions" aria-label="Cart actions">
+      <button type="button" class="btn" id="clearCartBtn">Clear Cart</button>
+      <button type="button" class="btn" id="processOrderBtn">Process Order</button>
+    </div>
   </main>
 
   <!-- Footer -->
   <footer>
-    <hr />
-    <p>&copy; 2026 Book Haven Bookstore | <a href="about.html">Contact</a></p>
+    <div class="wrap meta">
+      <div>
+        <strong>Book Haven Bookstore</strong><br />
+        123 Main St • Your City • (555) 123-4567
+      </div>
+
+      <div>
+        <button id="subscribeBtn" type="button" class="btn">Subscribe</button>
+      </div>
+
+      <div style="text-align:right;">
+        <div>© <span id="year"></span> Book Haven — All rights reserved</div>
+      </div>
+    </div>
   </footer>
+
+  <script>
+    // Footer year
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Subscribe alert (required on all pages)
+    const subscribeBtn = document.getElementById("subscribeBtn");
+    if (subscribeBtn) {
+      subscribeBtn.addEventListener("click", function () {
+        alert("Thank you for subscribing.");
+      });
+    }
+
+    // Add to Cart alert (required on Gallery page)
+    const addButtons = document.querySelectorAll(".add-to-cart");
+    addButtons.forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        alert("Item added to cart.");
+      });
+    });
+
+    // Clear Cart alert (required on Gallery page)
+    const clearCartBtn = document.getElementById("clearCartBtn");
+    if (clearCartBtn) {
+      clearCartBtn.addEventListener("click", function () {
+        alert("Cart cleared.");
+      });
+    }
+
+    // Process Order alert (required on Gallery page)
+    const processOrderBtn = document.getElementById("processOrderBtn");
+    if (processOrderBtn) {
+      processOrderBtn.addEventListener("click", function () {
+        alert("Thank you for your order.");
+      });
+    }
+  </script>
 </body>
 </html>
-
