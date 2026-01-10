@@ -6,199 +6,36 @@
     <title>Book Haven Bookstore - Home</title>
     <meta name="description" content="Book Haven — curated books, new releases, staff picks, and easy local pickup." />
     <style>
-        :root {
-            --accent: #2b6cb0;
-            --muted: #6b7280;
-            --bg: #f8fafc;
-            --card: #ffffff;
-            --radius: 10px;
-            --container: 1100px;
-        }
-
-        * {
-            box-sizing: border-box;
-        }
-
-        html, body {
-            height: 100%;
-            margin: 0;
-            font-family: system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial;
-            color: #111;
-            background: var(--bg);
-            -webkit-font-smoothing: antialiased;
-        }
-
-        a {
-            color: var(--accent);
-            text-decoration: none;
-        }
-
-        .wrap {
-            max-width: var(--container);
-            margin: 0 auto;
-            padding: 24px;
-        }
-
-        header {
-            background: linear-gradient(90deg, #edf4ff, transparent);
-            padding: 18px 0;
-            border-bottom: 1px solid #e6eef8;
-        }
-
-        .brand {
-            display: flex;
-            align-items: center;
-            gap: 16px;
-        }
-
-        .logo {
-            width: 56px;
-            height: 56px;
-            border-radius: 8px;
-            background: linear-gradient(135deg, var(--accent), #7dd3fc);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 700;
-            color: white;
-        }
-
-        nav {
-            margin-left: auto;
-        }
-
-        .nav-list {
-            display: flex;
-            gap: 14px;
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            align-items: center;
-        }
-
-        .nav-list a {
-            padding: 8px 12px;
-            border-radius: 8px;
-            font-weight: 600;
-            color: var(--accent);
-            background: transparent;
-        }
-
-        .hero {
-            display: grid;
-            grid-template-columns: 1fr 360px;
-            gap: 28px;
-            align-items: center;
-            padding: 36px 0;
-        }
-
-        .hero h1 {
-            margin: 0;
-            font-size: 2rem;
-        }
-
-        .hero p {
-            color: var(--muted);
-            margin: 8px 0 0;
-        }
-
-        .search {
-            display: flex;
-            gap: 8px;
-            margin-top: 18px;
-        }
-
-        .search input {
-            flex: 1;
-            padding: 10px 12px;
-            border: 1px solid #dbe7f8;
-            border-radius: 8px;
-        }
-
-        .btn {
-            background: var(--accent);
-            color: #fff;
-            padding: 10px 14px;
-            border-radius: 8px;
-            border: 0;
-            cursor: pointer;
-            font-weight: 600;
-        }
-
-        .card {
-            background: var(--card);
-            border: 1px solid #e6eef8;
-            padding: 16px;
-            border-radius: var(--radius);
-        }
-
-        .books {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 18px;
-            margin-top: 18px;
-        }
-
-        .book {
-            background: var(--card);
-            padding: 12px;
-            border-radius: 10px;
-            border: 1px solid #eef6ff;
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
-
-        .book img {
-            width: 100%;
-            height: 220px;
-            object-fit: cover;
-            border-radius: 8px;
-        }
-
-        .book h3 {
-            margin: 0;
-            font-size: 1rem;
-        }
-
-        .book p {
-            margin: 0;
-            color: var(--muted);
-            font-size: 0.9rem;
-        }
-
-        footer {
-            padding: 24px 0;
-            margin-top: 36px;
-            border-top: 1px solid #e6eef8;
-            background: linear-gradient(180deg, transparent, #ffffff);
-        }
-
-        .meta {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            gap: 12px;
-            flex-wrap: wrap;
-        }
-
+        :root { --accent:#2b6cb0; --muted:#6b7280; --bg:#f8fafc; --card:#ffffff; --radius:10px; --container:1100px; }
+        * { box-sizing: border-box; }
+        html, body { height:100%; margin:0; font-family:system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial; color:#111; background:var(--bg); -webkit-font-smoothing:antialiased; }
+        a { color: var(--accent); text-decoration: none; }
+        .wrap { max-width: var(--container); margin: 0 auto; padding: 24px; }
+        header { background: linear-gradient(90deg, #edf4ff, transparent); padding: 18px 0; border-bottom: 1px solid #e6eef8; }
+        .brand { display:flex; align-items:center; gap:16px; }
+        .logo { width:56px; height:56px; border-radius:8px; background: linear-gradient(135deg, var(--accent), #7dd3fc); display:flex; align-items:center; justify-content:center; font-weight:700; color:white; }
+        nav { margin-left:auto; }
+        .nav-list { display:flex; gap:14px; list-style:none; padding:0; margin:0; align-items:center; }
+        .nav-list a { padding:8px 12px; border-radius:8px; font-weight:600; color:var(--accent); background:transparent; }
+        .hero { display:grid; grid-template-columns:1fr 360px; gap:28px; align-items:center; padding:36px 0; }
+        .hero h1 { margin:0; font-size:2rem; }
+        .hero p { color:var(--muted); margin:8px 0 0; }
+        .search { display:flex; gap:8px; margin-top:18px; }
+        .search input { flex:1; padding:10px 12px; border:1px solid #dbe7f8; border-radius:8px; }
+        .btn { background: var(--accent); color:#fff; padding:10px 14px; border-radius:8px; border:0; cursor:pointer; font-weight:600; }
+        .card { background:var(--card); border:1px solid #e6eef8; padding:16px; border-radius:var(--radius); }
+        .books { display:grid; grid-template-columns:repeat(auto-fit, minmax(220px, 1fr)); gap:18px; margin-top:18px; }
+        .book { background:var(--card); padding:12px; border-radius:10px; border:1px solid #eef6ff; display:flex; flex-direction:column; gap:10px; }
+        .book img { width:100%; height:220px; object-fit:cover; border-radius:8px; }
+        .book h3 { margin:0; font-size:1rem; }
+        .book p { margin:0; color:var(--muted); font-size:0.9rem; }
+        footer { padding:24px 0; margin-top:36px; border-top:1px solid #e6eef8; background: linear-gradient(180deg, transparent, #ffffff); }
+        .meta { display:flex; justify-content:space-between; align-items:center; gap:12px; flex-wrap:wrap; }
         @media (max-width: 820px) {
-            .hero {
-                grid-template-columns: 1fr;
-            }
-
-            .brand {
-                gap: 10px;
-            }
-
-            nav {
-                order: 3;
-                width: 100%;
-            }
-
-            .nav-list {
-                justify-content: center;
-            }
+            .hero { grid-template-columns: 1fr; }
+            .brand { gap: 10px; }
+            nav { order: 3; width: 100%; }
+            .nav-list { justify-content: center; }
         }
     </style>
 </head>
@@ -260,7 +97,7 @@
                     <strong>Brie Mine 4Ever</strong>
                     <p>A heartfelt romance—perfect for cozy reading nights.</p>
                     <div style="margin-top:12px;display:flex;gap:8px">
-                        <button class="btn">Buy</button>
+                        <button class="btn" type="button">Buy</button>
                         <a href="details.html" style="align-self:center">Details</a>
                     </div>
                 </div>
@@ -274,25 +111,25 @@
                     <img src="images/Client3_Book1.png" alt="Brie Mine 4Ever" />
                     <h3>Brie Mine 4Ever</h3>
                     <p>Author Name — $14.99</p>
-                    <button class="btn">Add to Cart</button>
+                    <button class="btn" type="button">Add to Cart</button>
                 </div>
                 <div class="book">
                     <img src="images/Client3_Book2.png" alt="Glory Riders" />
                     <h3>Glory Riders</h3>
                     <p>Author Name — $18.50</p>
-                    <button class="btn">Add to Cart</button>
+                    <button class="btn" type="button">Add to Cart</button>
                 </div>
                 <div class="book">
                     <img src="images/Client3_Book3.png" alt="Sorcerer's Shadowed Chronicles" />
                     <h3>Sorcerer's Shadowed Chronicles</h3>
                     <p>Author Name — $12.00</p>
-                    <button class="btn">Add to Cart</button>
+                    <button class="btn" type="button">Add to Cart</button>
                 </div>
                 <div class="book">
                     <img src="images/Client3_Magazine1.png" alt="Ball" />
                     <h3>Ball</h3>
                     <p>Author Name — $22.00</p>
-                    <button class="btn">Add to Cart</button>
+                    <button class="btn" type="button">Add to Cart</button>
                 </div>
             </div>
         </section>
@@ -304,6 +141,11 @@
                 <strong>Book Haven Bookstore</strong><br />
                 123 Main St • Your City • (555) 123-4567
             </div>
+
+            <div>
+                <button id="subscribeBtn" type="button" class="btn">Subscribe</button>
+            </div>
+
             <div style="text-align:right;">
                 <div>Open Monday–Friday • 9am–8pm</div>
                 <div>Saturday • 10am–6pm</div>
@@ -314,8 +156,16 @@
     </footer>
 
     <script>
-        document.getElementById('year').textContent = new Date().getFullYear();
+        // Set current year
+        document.getElementById("year").textContent = new Date().getFullYear();
+
+        // Touchstone 3.1: Subscribe button alert
+        const subscribeBtn = document.getElementById("subscribeBtn");
+        if (subscribeBtn) {
+            subscribeBtn.addEventListener("click", function () {
+                alert("Thank you for subscribing.");
+            });
+        }
     </script>
 </body>
 </html>
-
