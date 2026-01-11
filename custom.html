@@ -1,165 +1,254 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Book Haven Bookstore - Community Involvement</title>
-    <meta name="description" content="Customer testimonials and Book Haven's community involvement." />
-    <style>
-        :root {
-            --accent: #2b6cb0;
-            --muted: #6b7280;
-            --bg: #f8fafc;
-            --card: #ffffff;
-            --radius: 10px;
-            --container: 1100px;
-        }
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Book Haven Bookstore - Custom Orders</title>
+  <meta name="description" content="Request custom book bundles, gift sets, and recommendations from Book Haven." />
 
-        * {
-            box-sizing: border-box;
-        }
+  <style>
+    :root {
+      --accent: #2b6cb0;
+      --muted: #6b7280;
+      --bg: #f8fafc;
+      --card: #ffffff;
+      --radius: 10px;
+      --container: 1100px;
+    }
 
-        html, body {
-            height: 100%;
-            margin: 0;
-            font-family: system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial;
-            color: #111;
-            background: var(--bg);
-            -webkit-font-smoothing: antialiased;
-        }
+    * { box-sizing: border-box; }
 
-        a {
-            color: var(--accent);
-            text-decoration: none;
-        }
+    html, body {
+      height: 100%;
+      margin: 0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial;
+      color: #111;
+      background: var(--bg);
+      -webkit-font-smoothing: antialiased;
+    }
 
-        .wrap {
-            max-width: var(--container);
-            margin: 0 auto;
-            padding: 24px;
-        }
+    a { color: var(--accent); text-decoration: none; }
 
-        header {
-            background: linear-gradient(90deg, #edf4ff, transparent);
-            padding: 18px 0;
-            border-bottom: 1px solid #e6eef8;
-        }
+    .wrap {
+      max-width: var(--container);
+      margin: 0 auto;
+      padding: 24px;
+    }
 
-        .brand {
-            display: flex;
-            align-items: center;
-            gap: 16px;
-        }
+    header {
+      background: linear-gradient(90deg, #edf4ff, transparent);
+      padding: 18px 0;
+      border-bottom: 1px solid #e6eef8;
+    }
 
-        .logo {
-            width: 56px;
-            height: 56px;
-            border-radius: 8px;
-            background: linear-gradient(135deg, var(--accent), #7dd3fc);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 700;
-            color: white;
-        }
+    .topbar {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
 
-        nav {
-            margin-left: auto;
-        }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
 
-        .nav-list {
-            display: flex;
-            gap: 14px;
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            align-items: center;
-        }
+    .logo {
+      width: 56px;
+      height: 56px;
+      border-radius: 8px;
+      background: linear-gradient(135deg, var(--accent), #7dd3fc);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      color: white;
+      flex: 0 0 auto;
+    }
 
-        .nav-list a {
-            padding: 8px 12px;
-            border-radius: 8px;
-            font-weight: 600;
-            color: var(--accent);
-            background: transparent;
-        }
+    nav { margin-left: auto; }
 
-        section {
-            margin-top: 28px;
-        }
+    .nav-list {
+      display: flex;
+      gap: 14px;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      align-items: center;
+    }
 
-        footer {
-            padding: 24px 0;
-            margin-top: 36px;
-            border-top: 1px solid #e6eef8;
-            background: linear-gradient(180deg, transparent, #ffffff);
-        }
+    .nav-list a {
+      padding: 8px 12px;
+      border-radius: 8px;
+      font-weight: 600;
+      color: var(--accent);
+      background: transparent;
+    }
 
-        .meta {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            gap: 12px;
-            flex-wrap: wrap;
-        }
+    .card {
+      background: var(--card);
+      border: 1px solid #e6eef8;
+      padding: 18px;
+      border-radius: var(--radius);
+    }
 
-        .testimonial {
-            background: var(--card);
-            border: 1px solid #e6eef8;
-            padding: 16px;
-            border-radius: var(--radius);
-            margin-bottom: 20px;
-        }
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 360px;
+      gap: 18px;
+      align-items: start;
+      margin-top: 18px;
+    }
 
-        .testimonial p {
-            font-size: 0.9rem;
-            color: var(--muted);
-        }
+    h1 { margin: 0; font-size: 2rem; }
+    p { color: var(--muted); line-height: 1.5; }
 
-        .community-card {
-            background: var(--card);
-            padding: 16px;
-            border-radius: var(--radius);
-            margin-bottom: 20px;
-        }
+    .btn {
+      background: var(--accent);
+      color: #fff;
+      padding: 10px 14px;
+      border-radius: 8px;
+      border: 0;
+      cursor: pointer;
+      font-weight: 600;
+    }
 
-        .community-card h3 {
-            margin: 0;
-            font-size: 1.2rem;
-        }
+    .pill {
+      display: inline-block;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: #eaf3ff;
+      color: #1f4c84;
+      font-weight: 600;
+      font-size: 0.9rem;
+    }
 
-        .community-card p {
-            font-size: 0.9rem;
-            color: var(--muted);
-        }
+    .list { margin: 10px 0 0; padding-left: 18px; }
+    .list li { margin: 8px 0; color: var(--muted); }
 
-    </style>
+    footer {
+      padding: 24px 0;
+      margin-top: 36px;
+      border-top: 1px solid #e6eef8;
+      background: linear-gradient(180deg, transparent, #ffffff);
+    }
+
+    .meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 820px) {
+      .grid { grid-template-columns: 1fr; }
+      nav { order: 3; width: 100%; }
+      .nav-list { justify-content: center; }
+      .topbar { flex-wrap: wrap; }
+    }
+  </style>
 </head>
+
 <body>
-    <header>
-        <div class="wrap">
-            <h1>Book Haven Bookstore - Community Involvement</h1>
-            <nav>
-                <ul class="nav-list">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="gallery.html">Gallery</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="custom.html">Custom</a></li>
-                </ul>
-            </nav>
+  <a class="skip-link" href="#main"
+     style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden">
+    Skip to content
+  </a>
+
+  <header>
+    <div class="wrap">
+      <div class="topbar">
+        <div class="brand">
+          <div class="logo" aria-hidden="true">BH</div>
+          <div>
+            <div style="font-weight:800">Book Haven</div>
+            <div style="font-size:0.85rem;color:var(--muted)">Local bookstore & online shop</div>
+          </div>
         </div>
-    </header>
 
-    <main class="wrap">
-        <section>
-            <h2>Customer Testimonials</h2>
+        <nav aria-label="Primary navigation">
+          <ul class="nav-list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="custom.html" aria-current="page">Custom</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
 
-            <div class="testimonial">
-                <strong>John Doe</strong>
-                <p>"Book Haven is my go-to spot for all my reading needs. Their selection is fantastic, and the staff is so knowledgeable and friendly!"</p>
-            </div>
+  <main id="main" class="wrap" role="main">
+    <h1>Custom Orders</h1>
+    <p>
+      Want a personalized book bundle, a gift set, or recommendations based on your interests?
+      Tell us what you’re looking for and we’ll help you build the perfect selection.
+    </p>
 
-            <div class="testimonial">
-                <strong>Jane Smith</strong>
-                <p>"I love attending the book clubs and events Book Haven organizes. It's always a welcoming environment
+    <div class="grid">
+      <section class="card" aria-label="Custom services">
+        <div class="pill">Popular Requests</div>
+        <ul class="list">
+          <li><strong>Gift Bundles:</strong> wrapped sets for birthdays, anniversaries, and holidays.</li>
+          <li><strong>Genre Starter Packs:</strong> fantasy, romance, mystery, nonfiction, and more.</li>
+          <li><strong>Book Club Picks:</strong> 4–8 copies plus discussion questions.</li>
+          <li><strong>School/Work Lists:</strong> we’ll help you find required texts quickly.</li>
+        </ul>
 
+        <div style="margin-top:14px;">
+          <a class="btn" href="about.html" style="display:inline-block;">Request a Custom Order</a>
+        </div>
+
+        <p style="margin-top:14px;">
+          Tip: Use the <strong>Contact form</strong> on the About page to send your request.
+        </p>
+      </section>
+
+      <aside class="card" aria-label="Custom order info">
+        <h2 style="margin-top:0;">How it works</h2>
+        <ol class="list">
+          <li>Tell us your interests + budget.</li>
+          <li>We curate a list of recommendations.</li>
+          <li>Pick up locally or arrange delivery options.</li>
+        </ol>
+
+        <p style="margin-top:12px;">
+          <strong>Fast response:</strong> Most requests answered within 1 business day.
+        </p>
+      </aside>
+    </div>
+  </main>
+
+  <footer>
+    <div class="wrap meta">
+      <div>
+        <strong>Book Haven Bookstore</strong><br />
+        123 Main St • Your City • (555) 123-4567
+      </div>
+
+      <div>
+        <button id="subscribeBtn" type="button" class="btn">Subscribe</button>
+      </div>
+
+      <div style="text-align:right;">
+        <div>Open Tue–Sun • 10am–6pm</div>
+        <div>© <span id="year"></span> Book Haven — All rights reserved</div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Set current year
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Touchstone 3.1: Subscribe alert
+    const subscribeBtn = document.getElementById("subscribeBtn");
+    if (subscribeBtn) {
+      subscribeBtn.addEventListener("click", function () {
+        alert("Thank you for subscribing.");
+      });
+    }
+  </script>
+</body>
+</html>
