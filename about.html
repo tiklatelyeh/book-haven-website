@@ -204,8 +204,8 @@
       <section class="card" aria-label="Contact form">
         <h2 style="margin-top:0">Contact Us</h2>
 
-        <!-- IMPORTANT: prevent page reload -->
-        <form id="contactForm" action="#" method="post" novalidate>
+        <!-- IMPORTANT: do NOT use novalidate (we need browser validation for Touchstone) -->
+        <form id="contactForm" action="#" method="post">
           <label for="name">Your Name</label>
           <input id="name" name="name" type="text" required />
 
@@ -250,15 +250,21 @@
       });
     }
 
-    // About/Contact form requirement: show alert on submit (and DO NOT reload page)
+    // Contact form: allow browser validation FIRST, then show alert, and do NOT reload page
     const contactForm = document.getElementById("contactForm");
     if (contactForm) {
       contactForm.addEventListener("submit", function (event) {
+        // If invalid, let the browser show its built-in validation messages
+        if (!contactForm.checkValidity()) {
+          return;
+        }
+
+        // If valid, prevent page reload and show alert
         event.preventDefault();
         alert("Thank you for your message.");
+        contactForm.reset(); // optional, but nice
       });
     }
   </script>
 </body>
 </html>
-
